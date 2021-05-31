@@ -1,0 +1,16 @@
+.pagUl {
+  list-style-type: none;
+  display: flex;
+  max-width: 300px;
+  justify-content: space-between;
+  margin: 0 auto 15px auto;
+
+  .pagLi {
+    text-decoration: none;
+    color: white
+  }
+
+  .pagLiActive {
+    color: rgb(91, 98, 194);
+  }
+}

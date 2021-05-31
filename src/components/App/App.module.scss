@@ -1,0 +1,15 @@
+.wrap {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  .appTitle {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 8px;
+  }
+}
