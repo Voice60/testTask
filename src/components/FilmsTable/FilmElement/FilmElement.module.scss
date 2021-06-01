@@ -1,11 +1,14 @@
 .li {
   list-style-type: none;
+
+  a {
+    text-decoration: none;
+  }
   .movie {
     display: flex;
     margin-bottom: 20px;
     transition-duration: .3s;
     cursor: pointer;
-    text-decoration: none;
     color: white;
     font-size: 22px;
     white-space: nowrap;
