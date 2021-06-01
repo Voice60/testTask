@@ -26,6 +26,21 @@
       box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.3);
     }
 
+    .fakeBackground {
+      border-radius: 5px;
+      min-width: 230px;
+      min-height: 345px;
+      background-position: center;
+      background-size: cover;
+      box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.3);
+      background-image: url('https://i.graphicmama.com/blog/wp-content/uploads/2019/10/08140842/Best-Photography-Logo-Ideas-Example-Carrie-Chase-Photography-Logo.jpg');
+
+      @media (max-width: 750px) {
+        min-width: 115px;
+        min-height: 173px;
+      }
+    }
+
     .img {
       border-radius: 5px;
       min-width: 230px;

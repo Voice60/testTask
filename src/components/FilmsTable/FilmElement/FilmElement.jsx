@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-
+import React from 'react'
 import styles from './FilmElement.module.scss'
 
+
 const FilmElement = ({ m }) => {
-  // const comments = useSelector(state => state.movies.comments)
-  const dispatch = useDispatch()
-  const [commentsOn, setCommentsOn] = useState(false)
   let ratingColor = 'white'
+
   if (m.rating >= 0 && m.rating <= 4) {
     ratingColor = '#fe2d2d'
   } else if (m.rating > 4 && m.rating <= 6) {
@@ -18,13 +15,14 @@ const FilmElement = ({ m }) => {
 
   return (
     <li onClick={() => {
-      // dispatch(getComments(m.id))
-      // setCommentsOn(true) 
     }} className={styles.li}>
       <a href={m.url}>
         <div className={styles.movie}>
-          <div style={{ backgroundImage: `URL(${m.medium_cover_image})` }} className={styles.img}>
+          <div className={styles.fakeBackground}>
+            <div style={{ backgroundImage: `URL(${m.medium_cover_image})` }} className={styles.img}>
+            </div>
           </div>
+
           <div className={styles.movieInfo}>
             <h2 className={styles.title}>{m.title_english}</h2>
             <p className={styles.tags + ' ' + styles.mb10px}>{m.genres.join(', ')}</p>
@@ -43,10 +41,6 @@ const FilmElement = ({ m }) => {
             </div>
           </div>
         </div>
-        {commentsOn &&
-          <div className={styles.comments}>
-
-          </div>}
       </a>
     </li>
   )

@@ -10,6 +10,7 @@ const MoviesSearchForm = () => {
   const movie_count = useSelector(state => state.movies.movie_count)
   const page_number = useSelector(state => state.movies.page_number)
   const dispatch = useDispatch()
+  
   return (
     <div>
       <Pagination
