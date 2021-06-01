@@ -14,10 +14,8 @@ const moviesReducer = (state = initialState, { type, payload }) => {
     case SET_MOVIES:
       return { ...state, movies: [...payload] }
     case SET_MOVIES_COUNT:
-      debugger
       return { ...state, movie_count: payload }
     case SET_PAGE_NUMBER:
-      debugger
       return { ...state, page_number: payload }
     default:
       return state

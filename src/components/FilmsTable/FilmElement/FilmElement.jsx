@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { listMoviesAPI } from '../../../api/api'
+
 import styles from './FilmElement.module.scss'
+
 const FilmElement = ({ m }) => {
   // const comments = useSelector(state => state.movies.comments)
+  const dispatch = useDispatch()
   const [commentsOn, setCommentsOn] = useState(false)
   let ratingColor = 'white'
   if (m.rating >= 0 && m.rating <= 4) {
@@ -15,10 +17,10 @@ const FilmElement = ({ m }) => {
   }
 
   return (
-    <li onClick={() => { 
-      listMoviesAPI.getComments(m.id)
-      setCommentsOn(true) 
-      }} className={styles.li}>
+    <li onClick={() => {
+      // dispatch(getComments(m.id))
+      // setCommentsOn(true) 
+    }} className={styles.li}>
       <div className={styles.movie}>
         <div style={{ backgroundImage: `URL(${m.medium_cover_image})` }} className={styles.img}>
         </div>
@@ -30,21 +32,20 @@ const FilmElement = ({ m }) => {
           <p className={styles.language}>language: <span className={styles.darkText}>{m.language}</span></p>
           <div className={styles.blockInfo}>
             <div style={{ color: ratingColor }} className={styles.rating}>
-              <img className={styles.icon} src="https://img.icons8.com/fluent/24/000000/star.png" />
+              <img className={styles.icon} src="https://img.icons8.com/fluent/24/000000/star.png" alt='star icon'/>
               {m.rating}/10
           </div>
             <div className={styles.clock}>
-              <img className={styles.icon} src="https://img.icons8.com/material-outlined/24/def1ff/wall-clock.png" />
+              <img className={styles.icon} src="https://img.icons8.com/material-outlined/24/def1ff/wall-clock.png" alt='clock icon'/>
             &nbsp;{m.runtime}
             </div>
           </div>
         </div>
       </div>
-      { commentsOn && <div className={styles.comments}>
+      { commentsOn &&
+        <div className={styles.comments}>
 
-      </div>
-
-      }
+        </div>}
     </li>
   )
 }

@@ -8,6 +8,8 @@
     text-decoration: none;
     color: white;
     font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
 
     @media (max-width: 750px) {
       font-size: 16px;
@@ -101,6 +103,9 @@
         }
 
         @media (max-width: 400px) {
+          left: 0;
+          
+
           .icon {
             height: 14px;
             width: 14px;
@@ -128,9 +133,5 @@
         }
       }
     }
-  }
-
-  .comments {
-    
   }
 }

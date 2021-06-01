@@ -1,11 +1,13 @@
+import FilmElement from './FilmElement/FilmElement'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { getMovies } from '../../redux/movies/moviesActions'
-import FilmElement from './FilmElement/FilmElement'
 
 const FilmsTable = () => {
   const page_number = useSelector(state => state.movies.page_number)
   const dispatch = useDispatch()
+  
   useEffect(() => {
     dispatch(getMovies(page_number))
   }, [page_number])

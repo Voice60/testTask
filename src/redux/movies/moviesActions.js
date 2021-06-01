@@ -17,8 +17,15 @@ export const setPageNumber = (payload) => ({
 export const getMovies = (page_number) => async (dispatch) => {
   let response = await listMoviesAPI.getMovies(page_number)
   if (response.status === 'ok') {
-    debugger
     dispatch(setMovieCount(response.data.movie_count))
     dispatch(setMovies(response.data.movies))
+  }
+}
+export const getComments = (movie_id) => async (dispatch) => {
+  let response = await listMoviesAPI.getComments(movie_id)
+  if (response.status === 'ok') {
+    debugger
+    // dispatch(setMovieCount(response.data.movie_count))
+    // dispatch(setMovies(response.data.movies))
   }
 }
